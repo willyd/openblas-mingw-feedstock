@@ -1,0 +1,24 @@
+{% set base_url = os.environ.get("OPENBLAS_URL", "https://sourceforge.net/projects/openblas/files/") %}
+{% set version = "0.2.14" %}
+{% set url = "{}v{}/mingw64_dll.zip".format(base_url, version) %}
+
+package:
+  name: openblas-mingw
+  version: {{ version }}
+
+source:
+  fn: mingw64_dll.zip
+  url: {{ url }}
+  sha1: fcba5e4d4ada6362aaabc932cfa54a25c01460dc
+
+build:
+  number: 0
+
+about:
+  home: http://www.openblas.net/
+  license: BSD 3-Clause
+  summary: mingw dlls for openblas
+
+extra:
+  recipe-maintainers:
+    - willyd
